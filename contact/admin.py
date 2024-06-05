@@ -5,7 +5,7 @@ from contact import models
 # Using decorator
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = 'id', 'first_name', 'last_name', 'category',
+    list_display = 'id', 'first_name', 'last_name', 'category', 'owner',
     ordering = '-id',
     list_filter = 'creation_date',
     search_fields = 'id', 'first_name', 'last_name',
