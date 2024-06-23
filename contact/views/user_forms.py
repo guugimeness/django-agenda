@@ -12,7 +12,7 @@ def register(request):
         
         if form.is_valid():
             form.save()
-            messages.success(request, 'Registrado com sucesso!')
+            messages.success(request, 'Registered successfully!')
             return redirect('contact:login')
             
     context = {
@@ -62,7 +62,7 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             auth.login(request, user)
-            messages.success(request, 'Logado com sucesso!')
+            messages.success(request, 'Logged in successfully!')
             return redirect('contact:index')
                 
     context = {
@@ -78,5 +78,5 @@ def login_view(request):
 @login_required(login_url='contact:login')
 def logout_view(request):
     auth.logout(request)
-    messages.success(request, 'Você foi deslogado!')
+    messages.success(request, 'You\'ve been logged out!')
     return redirect('contact:login')

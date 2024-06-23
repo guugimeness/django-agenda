@@ -20,7 +20,7 @@ def create(request):
             contact = form.save(commit=False)
             contact.owner = request.user
             contact.save()
-            messages.success(request, 'Contato criado com sucesso!')
+            messages.success(request, 'Contact created successfully!')
             return redirect('contact:update', id=contact.pk)
         
         return render(
@@ -55,7 +55,7 @@ def update(request, id):
         
         if form.is_valid():
             contact = form.save()
-            messages.success(request, 'Contato atualizado com sucesso!')
+            messages.success(request, 'Contact updated successfully!')
             return redirect('contact:update', id=contact.pk)
         
         return render(
@@ -82,7 +82,7 @@ def delete(request, id):
     
     if confirmation == 'yes':
         contact.delete()
-        messages.success(request, 'Contato deletado com sucesso!')
+        messages.success(request, 'Contact deleted successfully!')
         return redirect('contact:index')
     
     context = {
