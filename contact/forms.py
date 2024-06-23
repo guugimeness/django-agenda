@@ -113,7 +113,7 @@ class RegisterUpdateForm(forms.ModelForm):
     )
 
     password2 = forms.CharField(
-        label="Password 2",
+        label="Password confirmation",
         strip=False,
         widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
         help_text='Use the same password as before.',
